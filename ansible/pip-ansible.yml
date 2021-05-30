@@ -2,3 +2,4 @@
   pip:
     name: ansible==2.9.22
     state: present
+    executable: pip3

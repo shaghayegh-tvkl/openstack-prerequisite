@@ -1,0 +1,4 @@
+- lineinfile:
+    path: /etc/resolv.conf
+    insertbefore: BOF
+    line: 'nameserver 185.51.200.2'

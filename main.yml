@@ -1,0 +1,60 @@
+---
+- name: Configure DNS
+  hosts:
+    - openstack
+  remote_user: root
+  tasks:
+    - name: Adding Shecan DNS Nameserver to /etc/resolv.conf
+      include: ./init/dns.yml
+
+# --------------------------------------------------------
+
+- name: Install Initial Packages
+  hosts:
+    - openstack
+  remote_user: root
+  tasks:
+    - name: Install Initial Python and etc Packages
+      include: ./init/init.yml
+
+# --------------------------------------------------------
+# - name: Install Python3
+#   hosts:
+#     - cephadm-nodes
+#   remote_user: root
+#   tasks:
+#     - name: Install Python on Cephadm Nodes
+#       include: ./python3.yaml
+# --------------------------------------------------------
+
+# - name: Install Packages
+#   hosts:
+#     - cephadm-nodes
+#     - ceph-ansible-nodes
+#   remote_user: root
+#   tasks:
+#     - name: Install Packages
+#       include: ./common.yaml
+# --------------------------------------------------------
+
+# - name: Install Ceohadm
+#   hosts:
+#     - cephadm-mon-1
+#   remote_user: root
+#   tasks:
+#     - name: Install Cephadm
+#       include: ./ceph/install.yaml
+
+# --------------------------------------------------------
+
+- name: Install Ceohadm
+  hosts:
+    - cephadm-mon-1
+  remote_user: root
+  tasks:
+    - name: Bootstrap Cephadm
+      include: ./ceph/bootstrap.yaml
+
+      
+
+...

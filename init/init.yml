@@ -1,0 +1,16 @@
+- name: Instal Inital Packages 
+  apt:
+    pkg: [python3-dev,libffi-dev,gcc,libssl-dev]
+    state: present
+    update_cache: true
+
+- name: Instal pip3 
+  apt:
+    pkg: python3-pip
+    state: present
+    update_cache: true
+
+- name: Install pip
+  pip:
+    name: pip
+    state: present

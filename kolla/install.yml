@@ -1,0 +1,16 @@
+- name: Install Kolla Ansible
+  pip:
+    name: kolla-ansible
+    state: present
+- name: Create Directory
+  shell: mkdir -p /etc/kolla
+
+- name: Give Permissions
+  shell: mkdir -p /etc/kolla
+
+- name: Copy yml files
+  shell: cp -r /usr/local/share/kolla-ansible/etc_examples/kolla/* /etc/kolla
+
+- name: Copy inventory files
+  shell: cp /usr/local/share/kolla-ansible/ansible/inventory/* /home/ubuntu
+

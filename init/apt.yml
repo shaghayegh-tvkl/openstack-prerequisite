@@ -14,3 +14,4 @@
   pip:
     name: pip
     state: present
+    executable: pip3

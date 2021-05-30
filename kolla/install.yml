@@ -2,6 +2,8 @@
   pip:
     name: kolla-ansible
     state: present
+    executable: pip3
+    
 - name: Create Directory
   shell: mkdir -p /etc/kolla
 

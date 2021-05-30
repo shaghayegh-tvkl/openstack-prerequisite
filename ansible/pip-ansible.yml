@@ -1,3 +1,9 @@
+- name: Install Setuptools
+  pip:
+    name: setuptools
+    state: present
+    executable: pip3
+
 - name: Install Ansbile 2.9.22 Version
   pip:
     name: ansible==2.9.22
